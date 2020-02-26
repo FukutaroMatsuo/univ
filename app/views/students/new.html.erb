@@ -1,3 +1,14 @@
+<!--下記記述はrails c でも確認可能-->
+<% if @student.errors.any? %>
+  <%= pluralize(@student.errors.count, "error") %>
+  prohibited your profile from being created
+  <ul>
+    <% @student.errors.full_messages.each do |message| %>
+      <li><%= message %>
+    <% end %>
+  </ul>
+<% end %>
+
 <!--中央に寄せるのでcontainer-->
 <!--このままだとpaddingがないので、scssに記述-->
 <div class="container">
@@ -25,7 +36,7 @@
               <div class="row">
                 <div class="input-field col s12">
                   <!--classは下記のように連続して記述-->
-                  <%= f.submit "Submit", class: "btn orange waves-effect waves-light right" %>
+                  <%= f.submit "Sign up", class: "btn orange waves-effect waves-light right" %>
                 </div>
               </div>
             <% end %>
