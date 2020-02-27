@@ -1,0 +1,24 @@
+<!--下記は、errorのobjectは存在しますか？という意味-->
+<% if obj.errors.any? %>
+  <!--下記記述はrails c でも確認可能-->
+  <% if @student.errors.any? %>
+    <div class="container">
+      <div class="row sign-up-form">
+        <div class="col s12 m12 l12">
+          <!--下記はmaterializeのカラーコード-->
+          <div class="card-panel red lighten-2">
+            <span class="white-text">
+              <strong><%= pluralize(obj.errors.count, "error") %></strong>
+                prohibited your profile from being created
+                <ul>
+                  <% obj.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                </ul>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
