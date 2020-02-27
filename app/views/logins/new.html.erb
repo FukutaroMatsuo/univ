@@ -1,0 +1,40 @@
+<!--中央に寄せるのでcontainer-->
+<!--このままだとpaddingがないので、scssに記述-->
+<div class="container">
+  <!--sign-up-formはscss用のclass-->
+  <div class="row center sign-up-form">
+    <div class="col s12 m12 l12">
+      <!--文字通りカードのように浮き上がらせて表示-->
+      <div class="card-panel">
+        <h3 class="header">Log in</h3>
+        <div class="row">
+          <!-- form_for @student do |f| これが元の書式-->
+          <%= form_for(:logins, html: {class: "col s12"}) do |f| %>
+            <div class="row">
+              <div class="input-field col s12">
+                <!--下記、autofocusはページにgetしたら、選択された状態になるコマンド-->
+                <%= f.email_field :email, placeholder: "Enter your email address", autofocus: true %>
+                <%= f.label :email %>
+              </div>
+            </div>
+            <!--下記はpasswordの送信エリアだが、studentcontrollerのprivate以下でpasswordを追記する必要あり-->
+            <div class="row">
+              <div class="input-field col s12">
+                <%= f.password_field :password, placeholder: "Enter your password" %>
+                <%= f.label :password %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <!--classは下記のように連続して記述-->
+                <!--また、下記ではtrueならsign up、folseなら:以下を返すメソッド-->
+                <!--これを書くときは()を忘れない-->
+                <%= f.button '<i class="material-icons right">arrow_forward</i>Log in'.html_safe, class: "btn orange waves-effect waves-light right" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
