@@ -21,8 +21,21 @@
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <%= f.text_field :email, placeholder: "Enter your email address" %>
-                <%= f.label :email %>
+                <%= f.email_field :email, placeholder: "Enter your email address" %>
+                <%= f.label :email, class: "active" %>
+              </div>
+            </div>
+            <!--下記はpasswordの送信エリアだが、studentcontrollerのprivate以下でpasswordを追記する必要あり-->
+            <div class="row">
+              <div class="input-field col s12">
+                <%= f.password_field :password, placeholder: "Choose your password" %>
+                <%= f.label :password, class: "active" %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <%= f.password_field :password_confirmation, placeholder: "Confirm your password" %>
+                <%= f.label :password_confirmation, class: "active" %>
               </div>
             </div>
             <div class="row">
@@ -30,7 +43,7 @@
                 <!--classは下記のように連続して記述-->
                 <!--また、下記ではtrueならsign up、folseなら:以下を返すメソッド-->
                 <!--これを書くときは()を忘れない-->
-                <%= f.submit(@student.new_record? ? "Sign up" : "Submit updates", class: "btn orange waves-effect waves-light right") %>
+                <%= f.button(@student.new_record? ? '<i class="material-icons right">arrow_forward</i>Sign up'.html_safe : '<i class="material-icons right">arrow_forward</i>Submit changes'.html_safe, class: "btn orange waves-effect waves-light right") %>
               </div>
             </div>
           <% end %>
