@@ -7,5 +7,9 @@
         <p>Course Enrollments: none</p>
       </div>
     </div>
+    <!--下記@studentは、編集したいstudent-->
+    <!--更に、classでボタンを設定すると、linkがボタンになる-->
+    <!--.html_safeは、この中でhtmlを使用するために必要-->
+    <%= link_to '<i class="material-icons right">create</i>Edit your profile'.html_safe, edit_student_path(@student), class: "waves-effect waves-light btn" %>
   </div>
 </div>

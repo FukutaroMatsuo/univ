@@ -28,7 +28,7 @@
     <div class="col s12 m12 l12">
       <!--文字通りカードのように浮き上がらせて表示-->
       <div class="card-panel">
-        <h3 class="header">Sign Up!</h3>
+        <h3 class="header">Edit your profile</h3>
         <div class="row">
             <!-- form_for @student do |f| これが元の書式-->
             <%= form_for(@student, html: {class: "col s12"}) do |f| %>
@@ -47,7 +47,7 @@
               <div class="row">
                 <div class="input-field col s12">
                   <!--classは下記のように連続して記述-->
-                  <%= f.submit "Sign up", class: "btn orange waves-effect waves-light right" %>
+                  <%= f.submit "Submit changes", class: "btn orange waves-effect waves-light right" %>
                 </div>
               </div>
             <% end %>
@@ -56,3 +56,4 @@
       </div>
     </div>
   </div>
+  
