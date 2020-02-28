@@ -14,7 +14,8 @@
           <p>Course Enrollments: none</p>
         </div>
         <div class="card-action">
-          <a href="#">View Profile</a>
+          <!--(student)は上記のパイプ内から取得している-->
+          <%= link_to "View profile", student_path(student) %>
         </div>
       </div>
     </div>
