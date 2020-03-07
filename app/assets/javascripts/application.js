@@ -22,3 +22,7 @@ $(document).on('turbolinks:load', function() {
   $(".dropdown-trigger").dropdown();
   $('#fade-out-target').fadeOut(4000);
 })
+
+$(document).ready(function(){
+  $('ul.tabs').tabs();
+});
